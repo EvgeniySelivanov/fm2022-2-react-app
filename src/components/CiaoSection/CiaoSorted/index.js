@@ -13,5 +13,4 @@ class CiaoSorted extends Component {
     );
   }
 }
-
 export default CiaoSorted;

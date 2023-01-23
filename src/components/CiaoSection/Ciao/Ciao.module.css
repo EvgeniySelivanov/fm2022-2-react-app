@@ -1,0 +1,7 @@
+.container{
+  display: flex;
+  padding:20px;
+  background-color: rgb(184, 45, 68);
+  color: rgb(238, 255, 0);
+  
+}

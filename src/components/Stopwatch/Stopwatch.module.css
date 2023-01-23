@@ -1,0 +1,10 @@
+.container{
+  min-width: 300px;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 0.5em;
+  background-color: rgb(128, 219, 7);
+  color: aliceblue;
+  text-align: center;
+}

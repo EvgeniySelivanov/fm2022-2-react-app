@@ -1,5 +1,8 @@
 
 import { Component } from "react";
+// import './style.css';
+import styles from './Ciao.module.css';
+
 class Ciao extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +17,10 @@ class Ciao extends Component {
     const ciaoWord = isHi ? 'Hi' : 'Bye';
     const buttonWord = isHi ? 'bye' : 'hello'
     return (
-      <h2>{ciaoWord} {username}!
-        
+      <article className={styles.container}>
+      <h2>{ciaoWord} ,{username}!
         <button onClick={this.handlerBtn}>say {buttonWord}</button>
-      </h2>)
+      </h2></article>)
   }
 }
 export default Ciao;

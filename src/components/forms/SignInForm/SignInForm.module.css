@@ -1,0 +1,38 @@
+section{
+  background-color: aquamarine;
+}
+h1{
+  text-align: center;
+  margin-bottom: 0;
+  color: rgb(8, 131, 245);
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+  padding-top: 30px;
+ margin:auto;
+}
+.fields{
+  margin-bottom: 10px;
+  min-width: 80%;
+  height: 30px;
+ 
+}
+.btn{  margin-bottom: 10px;
+  min-width: 80%;
+  height: 30px;
+}
+.valid{
+  background-color: rgb(117, 231, 117);
+}
+.invalid{
+  background-color: rgb(228, 74, 3);
+}
+::placeholder{
+  color: rgb(4, 4, 177);
+  padding-left: 10px;
+  font-size: medium;
+  
+}

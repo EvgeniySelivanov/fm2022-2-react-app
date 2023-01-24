@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import "./style.css";
 import styles from './Stopwatch.module.css';
-class Stopwatch extends Component {
+class StopWatch extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,4 +58,4 @@ class Stopwatch extends Component {
   }
 }
 
-export default Stopwatch;
+export default StopWatch;

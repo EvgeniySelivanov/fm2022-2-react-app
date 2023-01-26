@@ -1,19 +1,32 @@
-import React, { Component } from 'react';
+import React  from 'react';
+import {UserDefault} from '../UserCard';
 import Ciao from '../Ciao';
 
-class CiaoList extends Component {
+function CiaoList(props){
  
-  mapUsers =
+ const mapUsers =
     ({ firstName, lastName, id }) => (
       <Ciao key={id} username={`${id}: ${firstName} ${lastName}`} />);
-  render() {
-    const {users}=this.props;
+  
+    const {users}=props;
     return (
       <section>
-      {users.map(this.mapUsers)}
+      {users.map(mapUsers)}
     </section>
     );
   }
-}
+  CiaoList.defaultProps = {
+    users:{id: null, firstName: 'Dart', lastName: 'Veider',},
+    
+  };
 
+  // PropTypes.shape({
+  //   id: PropTypes.number.isRequired,
+  //   firstName: PropTypes.string.isRequired,
+  //   isSelected: PropTypes.bool,
+  // })
+  // CiaoList.propTypes = {
+  //   user: userPropTypeShape.isRequired,
+  //   userSelect: PropTypes.func,
+  // };
 export default CiaoList;

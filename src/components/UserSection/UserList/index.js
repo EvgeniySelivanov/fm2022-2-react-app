@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
-import UserCard from '../UserCard';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class UserList extends Component {
+import UserCard,{userPropTypeShape} from '../UserCard';
 
-
-  mapUsers = (user) => <UserCard key={user.id} user={user} userSelect={this.props.userSelect} />;
-  
-  render() {
-    const { users } = this.props;
-    return (
-      <section>
-        <h2>Users list</h2>
-        {users.map(this.mapUsers)}
-      </section>
-    );
-  }
+function UserList(props) {
+  const mapUsers = (user) => <UserCard key={user.id} user={user} userSelect={props.userSelect} />;
+  const { users } = props;
+  return (
+    <section>
+      <h2>Users list</h2>
+      {users.map(mapUsers)}
+    </section>
+  );
 }
-
+UserList.defaultProps = {
+  users: [],
+}
+UserList.propTypes = {
+  users: PropTypes.arrayOf(userPropTypeShape).isRequired,
+}
 export default UserList;

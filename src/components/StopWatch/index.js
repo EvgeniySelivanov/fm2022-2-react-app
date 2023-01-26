@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import "./style.css";
+import { format,addSeconds,add } from 'date-fns';
 import styles from './Stopwatch.module.css';
 class StopWatch extends Component {
   constructor(props) {
@@ -14,10 +14,11 @@ class StopWatch extends Component {
 
   tick = () => {
     this.setState((state, props) => {
-      const { time } = this.state;
-      const newTime = new Date(time);
-      newTime.setSeconds(newTime.getSeconds() + 1);
-      return { time: newTime };
+      // const { time } = state;
+      return {time:addSeconds(state.time,1)};
+      // const newTime = new Date(time);
+      // newTime.setSeconds(newTime.getSeconds() + 1);
+      // return { time: newTime };
     });
   };
   start = () => {
@@ -49,6 +50,7 @@ class StopWatch extends Component {
     const { time } = this.state;
     return (
       <article className={styles.container}>
+        <h2>{format(time,'HH:mm:ss')}</h2>
         <h2>count: {time.toLocaleTimeString("en-GB")}</h2>
         <button onClick={this.start}>start</button>
         <button onClick={this.stop}>stop</button>

@@ -1,0 +1,50 @@
+// @import './../../common/styles/breakpoint';
+// @import './../../common/styles/mixin';
+// @import './../../common/styles/color';
+// @import './../../common/styles/template';
+@use 'src/common/styles/color.scss' as c;
+@use 'src/common/styles/breakpoint.scss' as b;
+@use 'src/common/styles/template.scss' as *;
+@use 'src/common/styles/mixin.scss' as m;
+
+
+.container{
+  min-width: 300px;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 0.5em;
+  background-color: rgb(128, 219, 7);
+  color: aliceblue;
+  text-align: center;
+    >h2{
+      font-size: 2em;
+    }
+    &__btn{
+      @extend %one-line;
+      width: 20%;
+      transition: 1s;
+      margin: 5px 5px;
+      padding: 0.8em;
+      background-color: c.$main-color;
+      @include m.border-style(3px,blue ,solid,10px );
+      &:not(&:last-child){
+        margin-right:10px;
+      }
+    }
+      :hover{
+        background-color: rgb(11, 236, 225);
+        transition: 1s;
+        
+      }
+}
+@media screen and (min-width:b.$sm){
+  .container{
+    background-color: pink;
+  }
+}
+@media screen and (min-width:b.$md){
+  .container{
+    background-color: rgb(212, 12, 45);
+  }
+}

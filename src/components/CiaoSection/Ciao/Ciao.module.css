@@ -3,5 +3,8 @@
   padding:20px;
   background-color: rgb(184, 45, 68);
   color: rgb(238, 255, 0);
-  
+  text-align: center;
+}
+.container>h2{
+  width: 100%;
 }

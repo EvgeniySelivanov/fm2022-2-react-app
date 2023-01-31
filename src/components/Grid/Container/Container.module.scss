@@ -1,0 +1,18 @@
+@use "src/common/styles/breakpoint.scss" as breakpoint;
+.container {
+  max-width: 350px;
+  margin: auto;
+  background-color: greenyellow;
+  @media screen and (min-width: breakpoint.$sm) {
+    max-width: breakpoint.$sm-max-width;
+  }
+  @media screen and (min-width: breakpoint.$md) {
+    max-width: breakpoint.$md-max-width;
+  }
+  @media screen and (min-width: breakpoint.$lg) {
+    max-width: breakpoint.$lg-max-width;
+  }
+  @media screen and (min-width: breakpoint.$xlg) {
+    max-width: breakpoint.$xlg-max-width;
+  }
+}

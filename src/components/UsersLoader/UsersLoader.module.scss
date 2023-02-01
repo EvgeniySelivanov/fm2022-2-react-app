@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.amount,.national,.users{
+  padding: 10px;
+}
+.amount{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(243, 241, 129);
+
+  label{
+    margin:0 7px;
+     }
+  input{
+    margin:0 7px;
+  }
+}
+.national{
+ 
+  background-color: rgb(219, 127, 255);
+
+}
+.users{
+  background-color: aquamarine;
+  
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(197, 230, 106);
+  min-height:40px;
+ button{
+  max-height:30px;
+  margin: 0 5px;
+  }
+}

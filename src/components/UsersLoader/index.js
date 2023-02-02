@@ -5,6 +5,9 @@ import Spinner from '../Spinner';
 import { getUsers } from './../../api/index';
 import { apiConfig } from '../../configs/index';
 import styles from './UsersLoader.module.scss';
+import UsersBox from './UsersBox';
+import NationalityBox from './NationalityBox';
+import AmountBox from './AmountBox';
 
 class UsersLoader extends Component {
 
@@ -68,14 +71,6 @@ class UsersLoader extends Component {
 
   }
 
-  mapUsers = ({ gender, name, nat, login }) =>
-  (<article key={login.uuid}>
-    <h3>
-      {name.first} {name.last}
-    </h3>
-    <p>nat: {nat}</p>
-    <p>gender: {gender}</p>
-  </article>)
   resultHandler = ({ target: { value } }) => this.setState({ currentResults: value });
   natHandler = ({ target: { value } }) => this.setState({ currentNat: value });
   render() {
@@ -89,28 +84,9 @@ class UsersLoader extends Component {
       );
     }
     return <section>
-      <div className={styles.amount}>
-        <h2>Amount: </h2>
-        <label><input onChange={this.resultHandler} name="results" type="radio" value={3} checked={currentResults === '3'} />3</label>
-        <label><input onChange={this.resultHandler} name="results" type="radio" value={5} checked={currentResults === '5'} />5</label>
-        <label><input onChange={this.resultHandler} name="results" type="radio" value={10} checked={currentResults === '10'} />10</label>
-      </div>
-
-      <div className={styles.national}>
-        <h2>Nationality: </h2>
-        <select name="nat" onChange={this.natHandler} value={currentNat}>
-          <option value={'gb'}>GB</option>
-          <option value={'de'}>DE</option>
-          <option value={'fr'}>FR</option>
-        </select>
-      </div>
-
-
-      <div className={styles.users}>
-        <h2>Users: </h2>
-        {users.map(this.mapUsers)}
-      </div>
-
+      <AmountBox currentResults={currentResults} resultHandler={this.resultHandler} users={users}/>
+      <NationalityBox currentNat={currentNat} natHandler={this.natHandler} users={users}/>
+      <UsersBox users={users}/>
       <div className={styles.buttons}>
         <button onClick={this.prevPage}>&#8698; prev</button>
         <strong> {currentPage} </strong>
@@ -119,11 +95,4 @@ class UsersLoader extends Component {
     </section>
   }
 }
-
-
-// UsersLoader.propTypes = {
-
-// };
-
-
 export default UsersLoader;

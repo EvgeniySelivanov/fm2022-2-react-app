@@ -2,18 +2,8 @@ import React, { Component } from 'react';
 import styles from './../UsersLoader.module.scss';
 const natList = ['au', 'br', 'ca', 'gb', 'de', 'fr'];
 class NationalityBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentNat: props.currentNat,
-      natHandler: props.natHandler,
-     
-
-    }
-  }
   render() {
-    const {currentNat, natHandler } = this.state;
-
+    const {currentNat, natHandler } = this.props;
     return (
       <div className={styles.national}>
         <h2>Nationality: </h2>
@@ -24,5 +14,4 @@ class NationalityBox extends Component {
     );
   }
 }
-
 export default NationalityBox;

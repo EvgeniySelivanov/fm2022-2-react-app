@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Error404 from '../Error404';
 import Spinner from '../Spinner';
-// import PropTypes from 'prop-types';
 import { getUsers } from './../../api/index';
 import { apiConfig } from '../../configs/index';
-import styles from './UsersLoader.module.scss';
 import UsersBox from './UsersBox';
 import NationalityBox from './NationalityBox';
 import AmountBox from './AmountBox';
+import ButtonBox from './ButtonBox/index';
 
 class UsersLoader extends Component {
 
@@ -87,11 +86,8 @@ class UsersLoader extends Component {
       <AmountBox currentResults={currentResults} resultHandler={this.resultHandler} users={users}/>
       <NationalityBox currentNat={currentNat} natHandler={this.natHandler} users={users}/>
       <UsersBox users={users}/>
-      <div className={styles.buttons}>
-        <button onClick={this.prevPage}>&#8698; prev</button>
-        <strong> {currentPage} </strong>
-        <button onClick={this.nextPage}>next &#10228;</button>
-      </div>
+      <ButtonBox currentPage={currentPage} prevPage={this.prevPage} nextPage={this.nextPage} />
+   
     </section>
   }
 }

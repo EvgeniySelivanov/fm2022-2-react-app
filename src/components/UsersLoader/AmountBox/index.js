@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './../UsersLoader.module.scss';
 const amountList = ['3', '5', '7', '9', '11', '15'];
+
 class AmountBox extends Component {
 
   render() {

@@ -1,4 +1,7 @@
-
+.usersLoaderLink{
+  font-size: 30px;
+  color: red;
+}
 .heading{
   color: teal;
   text-align: center;

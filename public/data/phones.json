@@ -1,0 +1,21 @@
+[
+  {"id":1,
+  "name":"Sony Experia",
+  "brand":"Sony"
+},
+{
+  "id":2,
+  "name":"3310",
+  "brand":"Nokia"
+},
+{
+  "id":3,
+  "name":"HTC Explorer",
+  "brand":"HTC"
+},
+{
+  "id":4,
+  "name":"IPhone5",
+  "brand":"Apple"
+}
+]

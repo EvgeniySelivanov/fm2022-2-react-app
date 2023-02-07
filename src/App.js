@@ -1,9 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
 import { UserContext, ThemeContext } from "./contexts";
+import CONSTANTS from './constants';
 import Parent from './components/Parent';
 import Header from './components/Header';
-import CONSTANTS from './constants';
 const { THEMES } = CONSTANTS;
 class App extends Component {
   constructor(props) {
@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <ThemeContext.Provider value={[theme, this.setTheme]}>
         <UserContext.Provider value={user}>
-          <Header />
-          <Parent />
+          <Header/>
+          <Parent/>
         </UserContext.Provider>
       </ThemeContext.Provider>
     )

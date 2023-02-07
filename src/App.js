@@ -1,30 +1,21 @@
 import './App.css';
-import React, { Component } from 'react';
-import { UserContext, ThemeContext } from "./contexts";
-import CONSTANTS from './constants';
-import Parent from './components/Parent';
-import Header from './components/Header';
-const { THEMES } = CONSTANTS;
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: { id: 1, firstName: "Brad", lastName: "Pitt" },
-      theme: THEMES.LIGHT,
-    };
-  }
-  setTheme = (theme) => this.setState({ theme });
-  render() {
-    const { user, theme } = this.state;
-    return (
-      <ThemeContext.Provider value={[theme, this.setTheme]}>
-        <UserContext.Provider value={user}>
-          <Header/>
-          <Parent/>
-        </UserContext.Provider>
-      </ThemeContext.Provider>
-    )
-  }
-}
+import React from 'react';
+import LogInForm from './components/forms/LogInForm';
+import { LOG_IN_SCHEMA } from './utils/validationSchemas';
 
+function App() {
+  const userDataLogIn = {
+    login: 'qwerty',
+    password: 'gr3at@3wdsG'
+  }
+  console.log(LOG_IN_SCHEMA.validate(userDataLogIn)
+    .then((values) => console.log(values))
+    .catch((error) => console.log(error)))
+  return (
+    <>
+      <LogInForm />
+    </>
+  )
+}
 export default App;
+//gr3at@3wdsG

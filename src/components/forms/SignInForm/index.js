@@ -18,7 +18,6 @@ class SignInForm extends Component {
     console.log(this.state);
     event.target.reset();
     this.setState = ({ ...initialValues });
-
   }
   // emailHandler=({target:{value}})=>this.setState({email:value});
   inputHandler = ({ target: { name, value } }) => this.setState({ [name]: value,[`is${name}Valid`]:!value.includes(" ")});

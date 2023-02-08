@@ -3,6 +3,7 @@ import { Form, Formik } from 'formik';
 import { LOG_IN_SCHEMA } from '../../../utils/validationSchemas';
 import InputWrapper from '../InputWrapper/index';
 import styles from './LogInForm.module.scss';
+import InputWrapperWithValidate from '../InputWrapperWithValidate';
 
 const initialValues = {
   login: '',
@@ -22,8 +23,8 @@ const LogInForm = (props) => {
         console.log(formikProps);
         return (
           <Form className={styles.form}>
-            <InputWrapper name='login' placeholder='your login' className={styles.label} />
-            <InputWrapper name='password' placeholder='your password' className={styles.label} />
+            <InputWrapperWithValidate name='login' type="text" placeholder='your login' className={styles.labelValid} />
+            <InputWrapper name='password' type='password' placeholder='your password' className={styles.label} />
             <input type='submit' value='SEND' />
           </Form>
         )

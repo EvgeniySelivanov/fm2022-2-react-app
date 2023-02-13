@@ -1,15 +1,13 @@
-import './App.css';
 import React from 'react';
-import LogInForm from './components/forms/LogInForm';
+import LearnHooks from './components/LearnHooks/index';
 
 
 function App() {
 
   return (
     <>
-      <LogInForm />
+     <LearnHooks/>
     </>
   )
 }
 export default App;
-//gr3at@3wdsG

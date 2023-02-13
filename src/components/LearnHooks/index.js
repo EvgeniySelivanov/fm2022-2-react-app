@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const LearnHooks = (props) => {
-  const [coords, setCoords] = useState({
-    x: 0,
-    y: 0,
-  });
-
   const [count, setCount] = useState(0);
+ 
 
-  const handlerMove = (event) => {
-    setCoords({
-      x: event.clientX,
-      y: event.clientY
-    })
-  }
+  useEffect(() => {
+    const handlerClick = () => {
+      setCount((prevCount) => prevCount + 1);
+      //setCount(count + 1);
+    }
+    //add effect (component didMount if [] clear array!!!! second parametr )
+    document.body.addEventListener('click', handlerClick);
+    return () => {
+      //clean effect  (component Will-Unmont if [] clear array!!!! second parametr)
+      document.body.removeEventListener('click', handlerClick);
+    };//eslint-disable-next-line
+  }, []);
 
-  const handlerClick = () => {
-    setCount((prevCount) => prevCount + 1);
-  }
+
 
   return (
-    <div style={{ height: "95vh" }} onMouseMove={handlerMove} onClick={handlerClick}>
-      <p>x: {coords.x}</p>
-      <p>y: {coords.y}</p>
+    <div>
       <p>count: {count}</p>
     </div>
   );

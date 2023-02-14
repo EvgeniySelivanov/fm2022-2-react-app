@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LearnHooks from './components/LearnHooks/index';
+import FuncStopWatch from './components/FuncStopWatch/index';
 
 
 function App() {
@@ -11,8 +11,10 @@ function App() {
       }}>
         swich visible
       </button>
+
+      {isVisible && <FuncStopWatch />}
       
-      {isVisible && <LearnHooks />}
+
     </>
   )
 }

@@ -29,7 +29,7 @@ const HomePage = (props) => {
 const showCalcValue=useMemo(()=>calcValue(value),[value])
 
   useEffect(() => {
-    console.log('func handlerValue');
+
   },
     [handlerValue]);
 

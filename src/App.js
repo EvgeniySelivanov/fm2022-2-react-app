@@ -6,6 +6,7 @@ import { UserContext, ThemeContext } from './contexts';
 import CONSTANTS from './constants';
 import { useClicker } from './hooks';
 import SignUpForm from './components/forms/SignUpForm';
+import Chat from './components/Chat';
 const { THEMES } = CONSTANTS;
 
 function App() {
@@ -23,11 +24,14 @@ function App() {
         <UserContext.Provider value={[user, setUser]}>
           <BrowserRouter>
             <FuncHeader />
-            <h2>Count clicker= {count}</h2>
+            {/* <h2>Count clicker= {count}</h2> */}
             <nav>
               <ul>
                 <li>
                   <NavLink to='/'>Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to='/chat'>Chat</NavLink>
                 </li>
                 <li>
                   <NavLink to='/sign-up'>SignUp</NavLink>
@@ -37,6 +41,8 @@ function App() {
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/sign-up' element={<SignUpForm />} />
+              <Route path='/chat' element={<Chat />} />
+
             </Routes>
           </BrowserRouter>
         </UserContext.Provider>

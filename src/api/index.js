@@ -11,10 +11,10 @@ import { apiConfig } from '../configs';
  */
 export const getUsers = (options = {}) => {
   const defaultOptions = {
-    format:apiConfig.DEFAULT_FORMAT,
+    format: apiConfig.DEFAULT_FORMAT,
     page: 1,
     results: apiConfig.DEFAULT_AMOUNT,
-    seed:apiConfig.API_KEY,
+    seed: apiConfig.API_KEY,
     nat: apiConfig.DEFAULT_NAT,
     inc: apiConfig.DEFAULT_INC_FIELD
   };
@@ -26,16 +26,17 @@ export const getUsers = (options = {}) => {
   // return fetch(
   //   `https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}&nat=${nat}`)
   //   .then(response => response.json());
-    return fetch(
-      `${apiConfig.API_URL}/?${queryString.stringify(readyOptions)}`)
-      .then(response => response.json());
+  return fetch(
+    `${apiConfig.API_URL}/?${queryString.stringify(readyOptions)}`)
+    .then(response => response.json());
 };
 
-export const loadUsers=()=>
-  fetch('/data/users.json').then((res)=>res.json());
+export const loadUsers = () =>
+  fetch('/data/users.json').then((res) => res.json());
 
-export const loadPhones=()=>
-  fetch('/data/phones.json').then((res)=>res.json());
+export const loadPhones = () =>
+  fetch('/data/phones.json').then((res) => res.json());
+export const loadChat = () => fetch('/data/chat.json').then((response) => response.json());
 
 
 

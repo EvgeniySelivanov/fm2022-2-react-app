@@ -1,0 +1,33 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "body": "hi!",
+      "authorId": 12
+    },
+    {
+      "id": 2,
+      "body": "by!",
+      "authorId": 3
+    },
+    {
+      "id": 3,
+      "body": "gav!",
+      "authorId": 12
+    }
+  ],
+  "users": [
+    {
+      "id": 12,
+      "name": "Tom"
+    },
+    {
+      "id": 13,
+      "name": "Jerry"
+    },
+    {
+      "id": 3,
+      "name": "Women"
+    }
+  ]
+}

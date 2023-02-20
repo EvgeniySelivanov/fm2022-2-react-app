@@ -1,4 +1,7 @@
 import * as Yup from 'yup';
+
+export const TASK_SCHEMA=Yup.object({body:Yup.string().trim().min(5).max(40).required()});
+
 export const NAME_SCHEMA = Yup
   .string('Must be string')
   .trim()

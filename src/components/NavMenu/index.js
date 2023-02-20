@@ -15,7 +15,7 @@ const NavMenu = () => {
   const navMenuRef = useRef(null);
   useEffect(() => {
     const handlerClick = ({ target }) => {
-      
+
       if (navMenuRef.current.contains(target) === false && state.isMenuOpen) {
         closeMenu();
       }
@@ -24,10 +24,13 @@ const NavMenu = () => {
     return () => window.removeEventListener("click", handlerClick);
     // eslint-disable-next-line
   }, [state.isMenuOpen]);
-
+  const keyCloseMenu = (event) => {
+    console.log(event.keyCode);
+    closeMenu();
+  }
   return (
     <nav className={classNames} ref={navMenuRef}>
-      <DisabledByDefault className={styles.closeBtn} onClick={closeMenu} />
+      <DisabledByDefault className={styles.closeBtn} onClick={closeMenu} tabIndex='0' onKeyDown={keyCloseMenu} />
 
       <ul>
         <li>
@@ -38,6 +41,11 @@ const NavMenu = () => {
         </li>
         <li>
           <NavLink to='/sign-up'>SignUp</NavLink>
+        </li>
+        <li>
+          <NavLink to='/todo-1'>ToDoReducer</NavLink>
+          <NavLink to='/todo-2'>ToDoUseState</NavLink>
+
         </li>
       </ul>
     </nav>

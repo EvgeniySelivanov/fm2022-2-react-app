@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { MenuOpen } from '@mui/icons-material';
 import FuncHeader from './components/FuncHeader';
 import HomePage from './pages/HomePage';
@@ -9,6 +9,8 @@ import CONSTANTS from './constants';
 import SignUpForm from './components/forms/SignUpForm';
 import Chat from './components/Chat';
 import NavMenu from './components/NavMenu';
+import TodoReducer from './components/TodoReducer';
+import TodoUseState from './components/TodoUseState';
 const { THEMES } = CONSTANTS;
 
 
@@ -40,10 +42,10 @@ function App() {
   // const count = useClicker(300);
 const openMenu=(event)=>{
   event.stopPropagation();
-  return dispatch({type:'MENU_OPEN'})
+  return dispatch({type:'MENU_OPEN'});
 }
 const closeMenu=()=>{
-  return dispatch({type:'MENU_CLOSE'})
+  return dispatch({type:'MENU_CLOSE'});
 }
 
   return (
@@ -55,23 +57,15 @@ const closeMenu=()=>{
             <NavMenu />
             <FuncHeader />
             {/* <h2>Count clicker= {count}</h2> */}
-            <nav>
-              <ul>
-                <li>
-                  <NavLink to='/'>Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to='/chat'>Chat</NavLink>
-                </li>
-                <li>
-                  <NavLink to='/sign-up'>SignUp</NavLink>
-                </li>
-              </ul>
-            </nav>
+          
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/sign-up' element={<SignUpForm />} />
               <Route path='/chat' element={<Chat />} />
+              <Route path='/todo-1' element={<TodoReducer />} />
+              <Route path='/todo-2' element={<TodoUseState />} />
+
+
             </Routes>
           </BrowserRouter>
         </UserContext.Provider>
